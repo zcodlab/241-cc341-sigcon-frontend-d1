@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "build": "ng build --configuration production",
+    "watch": "ng build --watch --configuration production",
+    "test": "ng test --single-run",
     "serve:ssr:241CC341-sigcon-frontend": "node dist/241-cc341-sigcon-frontend/server/server.mjs"
   },
   "private": true,
