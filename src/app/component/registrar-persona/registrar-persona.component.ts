@@ -1,5 +1,10 @@
 import { Component, Inject, LOCALE_ID } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Persona } from '../../model/persona';
 import { PersonaService } from './../../service/persona.service';
 import Swal from 'sweetalert2';
@@ -31,11 +36,20 @@ export class RegistrarPersonaComponent {
     this.offset = new Date().getTimezoneOffset();
     this.personaForm = new FormGroup({
       id_persona: new FormControl('', []),
-      apellido_paterno: new FormControl('', []),
-      apellido_materno: new FormControl('', []),
-      nombres: new FormControl('', []),
-      fecha_nacimiento: new FormControl('', []),
-      id_tipo_documento: new FormControl('1', []),
+      apellido_paterno: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+      apellido_materno: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+      nombres: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+      fecha_nacimiento: new FormControl('', [Validators.required]),
+      id_tipo_documento: new FormControl('1', [Validators.required]),
     });
   }
   ngOnInit(): void {

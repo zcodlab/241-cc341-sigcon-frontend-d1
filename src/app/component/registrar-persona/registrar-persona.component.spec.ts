@@ -63,6 +63,9 @@ describe('RegistrarPersonaComponent', () => {
       id_tipo_documento: persona.id_tipo_documento,
     });
 
-    expect(component.personaForm.invalid).toBeFalse(); //TODO: ✔
+    const btnElement = deb.query(By.css('.btn'));
+
+    expect(component.personaForm.invalid).toBeFalse();
+    expect(btnElement.nativeElement.disabled).toBeTrue();
   });
 });

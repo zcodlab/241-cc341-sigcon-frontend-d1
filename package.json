@@ -1,12 +1,12 @@
 {
   "name": "241-cc341-sigcon-frontend",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration production",
-    "test": "ng test --single-run",
+    "test": "ng test",
     "serve:ssr:241CC341-sigcon-frontend": "node dist/241-cc341-sigcon-frontend/server/server.mjs"
   },
   "private": true,
